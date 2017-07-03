@@ -1,20 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: main-deployment
-  labels:
-    app: main
+  name: api-deployment
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: main
+          name: api-pod
     spec:
       containers:
-      - name: main-app
-        image: gcr.io/gke-playground-201706/helloworld:latest
-        imagePullPolicy: Always
-        ports:
-          - name: http-server
-            containerPort: 8080
+        - name: api
+          image: gcr.io/gke-playground-201706/api:latest
+          imagePullPolicy: Always
