@@ -4,5 +4,5 @@ steps:
     args: ['build', '-o', 'api', 'main.go']
   - name: 'gcr.io/cloud-builders/docker'
     env: ['PROJECT_ROOT=gke-playground-201706']
-    args: ['build', '--tag=gcr.io/$PROJECT_ID/api', '.']
-images: ['gcr.io/$PROJECT_ID/api']
+    args: ['build', '--tag=gcr.io/$PROJECT_ID/api:v0.2.0', '.']
+images: ['gcr.io/$PROJECT_ID/api:v0.2.0']
